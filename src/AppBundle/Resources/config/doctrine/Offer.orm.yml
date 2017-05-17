@@ -1,0 +1,23 @@
+AppBundle\Entity\Offer:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\OfferRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        price:
+            type: decimal
+            precision: '7'
+            scale: '2'
+        updatedAt:
+            type: datetime
+    manyToOne:
+        merchant:
+            targetEntity: AppBundle\Entity\Merchant
+        product:
+            targetEntity: AppBundle\Entity\Product
+    lifecycleCallbacks: {  }

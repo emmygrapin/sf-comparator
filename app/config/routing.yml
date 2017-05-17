@@ -1,0 +1,11 @@
+app:
+    resource: '@AppBundle/Resources/config/routing.yml'
+
+app_feed_fake:
+    path: /_feed/fake/{merchantName}_{merchantCode}.{format}
+    defaults:
+        _controller: AppBundle:Feed:fake
+        format: json
+    requirements:
+        merchantCode: \d+
+        format: json|csv|xml
